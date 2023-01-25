@@ -1,4 +1,11 @@
 # cashflow
+It is a record of expenses and income, with an interface focused on mobiles. It uses Vue 3 for the rendering of its components.
+
+
+# Site
+https://cash-flow-practice-vue.netlify.app/
+
+The application is adapted for Pixel 2 screens. So it is recommended to use the elements inspector in Pixel 2 to see the application correctly.
 
 ## Project setup
 ```
