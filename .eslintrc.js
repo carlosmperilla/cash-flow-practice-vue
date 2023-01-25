@@ -21,4 +21,9 @@ module.exports = {
     // todos los elementos html son de una sola palabra, por ejemplo home-content seria un nombre más adecuado que Home.
     "vue/multi-word-component-names": 0,
   },
+  globals: {
+    // Para evitar el error de linteo don defineProps y defineEmits.
+    defineProps: "readonly",
+    defineEmits: "readonly",
+  },
 };

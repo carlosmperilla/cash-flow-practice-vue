@@ -17,53 +17,53 @@
             @submit.prevent, previene el evento submit,
             y llama a una función, en este caso submit.
          -->
-         <form @submit.prevent="submit">
-            <div class="field">
-            <label for="title-add-movement">Título</label>
-            <!-- 
+      <form @submit.prevent="submit">
+        <div class="field">
+          <label for="title-add-movement">Título</label>
+          <!-- 
                         v-model es una forma bidireccional de comunicar la vista con la lógica del componente.
                         Así el valor de title en este caso sera asignado automaticamente al ingresar un input.
                         Y a su vez, si se modifica el valor de title, sera modificado el valor del input.
                     -->
-            <input
-                v-model="title"
-                type="text"
-                name="title-add-movement"
-                id="title-add-movement"
-            />
-            </div>
-            <div class="field">
-            <label for="amount-add-movement">Monto</label>
-            <input
-                v-model="amount"
-                type="number"
-                name="amount-add-movement"
-                id="amount-add-movement"
-            />
-            </div>
-            <div class="field">
-            <label for="description-add-movement">Descripción</label>
-            <textarea
-                v-model="description"
-                name="description-add-movement"
-                id="description-add-movement"
-                rows="4"
-            ></textarea>
-            </div>
-            <div class="field">
-            <label class="radio-label">
-                <input type="radio" v-model="movementType" value="Ingreso" />
-                <span>Ingreso</span>
-            </label>
-            <label class="radio-label">
-                <input type="radio" v-model="movementType" value="Gasto" />
-                <span>Gasto</span>
-            </label>
-            </div>
-            <div class="action">
-            <button>Agregar movimiento</button>
-            </div>
-        </form>
+          <input
+            v-model="title"
+            type="text"
+            name="title-add-movement"
+            id="title-add-movement"
+          />
+        </div>
+        <div class="field">
+          <label for="amount-add-movement">Monto</label>
+          <input
+            v-model="amount"
+            type="number"
+            name="amount-add-movement"
+            id="amount-add-movement"
+          />
+        </div>
+        <div class="field">
+          <label for="description-add-movement">Descripción</label>
+          <textarea
+            v-model="description"
+            name="description-add-movement"
+            id="description-add-movement"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="field">
+          <label class="radio-label">
+            <input type="radio" v-model="movementType" value="Ingreso" />
+            <span>Ingreso</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" v-model="movementType" value="Gasto" />
+            <span>Gasto</span>
+          </label>
+        </div>
+        <div class="action">
+          <button>Agregar movimiento</button>
+        </div>
+      </form>
     </Modal>
   </teleport>
 </template>
@@ -79,8 +79,6 @@ const amount = ref(0);
 const description = ref("");
 const movementType = ref("Ingreso");
 
-console.log(showModal)
-
 const emit = defineEmits(["create"]);
 
 const submit = () => {
@@ -94,7 +92,7 @@ const submit = () => {
   });
   // Esto es para reinicializar los valores luego de crear un movimiento.
   title.value = "";
-  description.value;
+  description.value = "";
   amount.value = 0;
   movementType.value = "Ingreso";
 };

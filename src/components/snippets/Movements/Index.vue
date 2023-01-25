@@ -44,8 +44,10 @@ const props = defineProps({
 // es una referencia que apunta a la propiedad correspondiente del objeto original.
 const { movements } = toRefs(props);
 
+const emit = defineEmits(["remove"]);
+
 const remove = (id) => {
-  console.log("remove", id);
+  emit("remove", id);
 };
 </script>
 
